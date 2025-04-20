@@ -18,12 +18,6 @@ function App() {
     
     fetchData();
   }, [query]);
-  
-  //Insecure cookie handling
-  useEffect(() => {
-    document.cookie = "authToken=" + KEY_SECRET + "; path=/";
-    document.cookie = "username=admin; path=/";
-  }, []);
 
   return (
     <div className="App">
