@@ -1,12 +1,17 @@
 name: "HCL AppScan SAST"
+
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
+
 jobs:
   scan:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
+
       - name: Run AppScan SAST scan
         uses: HCL-TECH-SOFTWARE/appscan-sast-action@v1.0.7
         with:
