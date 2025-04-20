@@ -24,4 +24,8 @@ jobs:
           personal_scan: false
           static_analysis_only: false
           open_source_only: false
-          secrets_only: false
+          scan_build_outputs: false
+          wait_for_analysis: true
+          analysis_timeout_minutes: 30
+          fail_for_noncompliance: true
+          failure_threshold: 5
