@@ -1,5 +1,6 @@
 # AppScan 360° Demo
 
+
 ## Description
 
 This project demonstrates the integration of HCL AppScan 360° with a React application. It showcases how static application security testing (SAST) can be seamlessly incorporated into the development workflow to identify and remediate security vulnerabilities in real-time.
@@ -53,11 +54,26 @@ This project demonstrates the integration of HCL AppScan 360° with a React appl
       }
    ```
 5. Start the development server:
+3. Configure AppScan CodeSweep in VS Code:
+   ```
+      {
+        "configureCloudCredentials": [
+          {
+            "serviceUrl": "https://cloud.appscan.com",
+            "keyId": "your-key-id",
+            "keySecret": "your-key-secret",
+            "acceptssl": true
+          }
+        ]
+      }
+   ```
+5. Start the development server:
 
     ```
     npm start
     ```
 
+6. Open the application in your browser:
 6. Open the application in your browser:
 
     ```
