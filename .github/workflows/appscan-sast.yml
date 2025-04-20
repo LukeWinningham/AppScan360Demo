@@ -20,6 +20,8 @@ jobs:
           asoc_key: ${{ secrets.ASOC_KEY }}
           asoc_secret: ${{ secrets.ASOC_SECRET }}
           application_id: ${{ secrets.ASOC_APP_ID }}
-          service_url: ${{ secrets.ASOC_SERVICE_URL }}
           scan_name: "GitHub Actions SAST Scan"
-          target: "."
+          personal_scan: false
+          static_analysis_only: false
+          open_source_only: false
+          secrets_only: false
