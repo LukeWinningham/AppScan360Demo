@@ -1,35 +1,29 @@
-name: AppScan SAST Scan
+name: Deploy with Security Scan
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   scan:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up SAClientUtil
-        run: |
-          wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 3 -O SAClientUtil.zip "https://your-secure-location/SAClientUtil.zip"
-          unzip SAClientUtil.zip -d SAClientUtil
-        shell: bash
+        uses: actions/checkout@v2
 
       - name: Run AppScan SAST
         uses: HCL-TECH-SOFTWARE/appscan-sast-action@v1
         with:
           asoc_key: ${{ secrets.ASOC_KEY }}
           asoc_secret: ${{ secrets.ASOC_SECRET }}
-          application_id: ${{ secrets.ASOC_APP_ID }}
-          scan_name: "My Scan"
-          scan_build_outputs: true
-          wait_for_analysis: true
-          analysis_timeout_minutes: 30
-          fail_for_noncompliance: true
-          failure_threshold: 3
-        env:
-          SA_CLIENT_UTIL_PATH: ./SAClientUtil
+          application_name: 'Testing AppScan'
+          scan_name: 'Deploy Scan'
+          scan_type: 'SAST'
+          fail_on_findings: true
+
+      - name: Deploy Application
+        run: |
+          # Your deployment commands here
+        if: success()
