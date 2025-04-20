@@ -18,3 +18,4 @@ jobs:
           asoc_key: ${{ secrets.ASOC_KEY }}
           asoc_secret: ${{ secrets.ASOC_SECRET }}
           application_id: 80bd8641-fa62-4055-a8c3-47630a2c1d48
+          fail_on_findings: true
