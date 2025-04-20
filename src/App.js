@@ -9,16 +9,7 @@ function App() {
   const [query, setQuery] = useState('');
 
   
-  useEffect(() => {
-    const fetchData = async () => {
-      const userId = query || '1';
-      // Insecure SQL construction
-      const sql = "SELECT * FROM users WHERE id = " + userId;
-      console.log("Executing query:", sql);
-    };
-    
-    fetchData();
-  }, [query]);
+
   
   //Insecure cookie handling
   useEffect(() => {
