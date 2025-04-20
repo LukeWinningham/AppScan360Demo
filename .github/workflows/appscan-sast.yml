@@ -1,6 +1,6 @@
 name: "HCL AppScan SAST"
 on:
-  workflow_dispatch
+  workflow_dispatch:
 jobs:
   scan:
     runs-on: ubuntu-latest
@@ -10,6 +10,6 @@ jobs:
       - name: Run AppScan SAST scan
         uses: HCL-TECH-SOFTWARE/appscan-sast-action@v1.0.7
         with:
-          asoc_key: ${{secrets.ASOC_KEY}}
-          asoc_secret: ${{secrets.ASOC_SECRET}}
+          asoc_key: ${{ secrets.ASOC_KEY }}
+          asoc_secret: ${{ secrets.ASOC_SECRET }}
           application_id: 80bd8641-fa62-4055-a8c3-47630a2c1d48
