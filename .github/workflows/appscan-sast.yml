@@ -1,0 +1,25 @@
+name: AppScan SAST Scan
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  appscan-sast:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run AppScan SAST
+        uses: HCL-TECH-SOFTWARE/appscan-sast-action@v1
+        with:
+          asoc_key: ${{ secrets.ASOC_KEY }}
+          asoc_secret: ${{ secrets.ASOC_SECRET }}
+          application_id: ${{ secrets.ASOC_APP_ID }}
+          service_url: ${{ secrets.ASOC_SERVICE_URL }}
+          scan_name: "GitHub Actions SAST Scan"
+          target: "."
