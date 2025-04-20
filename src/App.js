@@ -52,7 +52,7 @@ function App() {
         {/* Security issue #5: Exposing sensitive data in UI */}
         <div>Password: {PASSWORD}</div>
         <div>API Key: {API_KEY}</div>
-        
+      
         {/* Security issue #6: XSS via dangerouslySetInnerHTML */}
         <div dangerouslySetInnerHTML={createMarkup()} />
         
