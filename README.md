@@ -41,24 +41,26 @@ This project demonstrates the integration of HCL AppScan 360° with a React appl
    ```
    npm install
    ```
-3. Configure AppScan CodeSweep in VS Code: 
-{
-  "configureCloudCredentials": [
-    {
-      "serviceUrl": "https://cloud.appscan.com",
-      "keyId": "your-key-id",
-      "keySecret": "your-key-secret",
-      "acceptssl": true
-    }
-  ]
-}
-4. Start the development server:
+3. Configure AppScan CodeSweep in VS Code:
+   ```
+      {
+        "configureCloudCredentials": [
+          {
+            "serviceUrl": "https://cloud.appscan.com",
+            "keyId": "your-key-id",
+            "keySecret": "your-key-secret",
+            "acceptssl": true
+          }
+        ]
+      }
+   ```
+5. Start the development server:
 
     ```
     npm start
     ```
 
-5. Open the application in your browser:
+6. Open the application in your browser:
 
     ```
     http://localhost:3000
