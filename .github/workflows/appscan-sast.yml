@@ -1,34 +1,15 @@
-name: Deploy with Security Scan
-
+name: "HCL AppScan SAST"
 on:
-  push:
-    branches:
-      - main
-
+  workflow_dispatch
 jobs:
   scan:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Run AppScan SAST
-        uses: HCL-TECH-SOFTWARE/appscan-sast-action@v1
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run AppScan SAST scan
+        uses: HCL-TECH-SOFTWARE/appscan-sast-action@v1.0.7
         with:
-          asoc_key: ${{ secrets.ASOC_KEY }}
-          asoc_secret: ${{ secrets.ASOC_SECRET }}
-          application_id: ${{ secrets.ASOC_APP_ID }}
-          scan_name: 'Deploy Scan'
-          personal_scan: false
-          static_analysis_only: true
-          wait_for_analysis: true
-          analysis_timeout_minutes: 30
-          fail_for_noncompliance: true
-          failure_threshold: 5
-
-      - name: Deploy Application
-        run: |
-          # Your deployment commands here
-        if: success()
-
+          asoc_key: ${{secrets.ASOC_KEY}}
+          asoc_secret: ${{secrets.ASOC_SECRET}}
+          application_id: 80bd8641-fa62-4055-a8c3-47630a2c1d48
