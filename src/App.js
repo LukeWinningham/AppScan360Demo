@@ -7,6 +7,7 @@ function App() {
 
   const [userData, setUserData] = useState('');
   const [query, setQuery] = useState('');
+
   
   useEffect(() => {
     const fetchData = async () => {
@@ -18,6 +19,12 @@ function App() {
     
     fetchData();
   }, [query]);
+  
+  //Insecure cookie handling
+  useEffect(() => {
+    document.cookie = "authToken=" + KEY_SECRET + "; path=/";
+    document.cookie = "username=admin; path=/";
+  }, []);
 
   return (
     <div className="App">
