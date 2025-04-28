@@ -3,18 +3,18 @@
 
 ## Description
 
-This project demonstrates the integration of HCL AppScan 360° with a React application. It showcases how static application security testing (SAST) can be seamlessly incorporated into the development workflow to identify and remediate security vulnerabilities in real-time.
+This project demonstrates the integration of HCL AppScan with a React application. It showcases how static application security testing (SAST) can be seamlessly incorporated into the development workflow to identify and remediate security vulnerabilities in real-time.
 
 ## Features
 
 - Real-time security scanning of React code
-- Integration with AppScan 360° for vulnerability detection
+- Integration with AppScan for vulnerability detection
 - User-friendly interface for viewing and addressing security issues
 
 ## Technologies Used
 
 - React
-- AppScan 360°
+- AppScan 
 - Visual Studio Code
 - GitHub Actions (for CI/CD pipeline)
 
