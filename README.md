@@ -1,4 +1,4 @@
-# AppScan 360° Demo
+# AppScan Demo
 
 
 ## Description
